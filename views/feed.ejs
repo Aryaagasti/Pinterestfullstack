@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/feed.css">
+    <title>welcome pinterest feed page</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a href="#">
+                <img src="https://cdn.icon-icons.com/icons2/2972/PNG/512/pinterest_logo_icon_186892.png" alt="Pinterest Logo" class="logo">
+            </a>
+            <h1 class="heading">Pinterest</h1>
+        </div>
+        <div class="navbar-right">
+            <a href="/profile">Profile</a>
+            <a href="/feed">Feed</a>
+            <a href="/logout" class="logout">Logout</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <% if (user && user.posts.length > 0) { %>
+            <% user.posts.forEach((post) => { %>
+                <div class="box" style="width: 18rem;">
+                    <img src="/images/uploads/<%= post.image %>" class="card-img-top" alt="...">
+                    <button class="like-button" data-post-id="<%= post._id %>">🧡</button>
+                </div>
+            <% }) %>
+        <% } else { %>
+            <p>No posts found.</p>
+        <% } %>
+    </div>
+
+    <!-- Display posts of other users -->
+    <% otherPosts.forEach((post) => { %>
+        <div class="box" style="width: 18rem;">
+            <img src="/images/uploads/<%= post.image %>" alt="Post Image">
+            <button class="like-button" data-post-id="<%= post._id %>">🧡</button>
+        </div>
+    <% }) %>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Add event listener to each like button
+            document.querySelectorAll('.like-button').forEach(function (button) {
+                button.addEventListener('click', function () {
+                    // Get the post ID from the data attribute
+                    const postId = button.getAttribute('data-post-id');
+
+                    // Send a POST request to the server to handle the like action
+                    fetch('/like/' + postId, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ postId: postId })
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            // Update the UI to reflect the like action (e.g., change button text, update like count)
+                            button.textContent = 'Liked';
+                        } else {
+                            console.error('Failed to like post');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

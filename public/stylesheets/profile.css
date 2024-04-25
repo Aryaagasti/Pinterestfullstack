@@ -1,0 +1,229 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Gilroy";
+}
+
+body {
+  background-color: #222020;
+}
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 20px;
+	color: white;
+	background-color: #222020;
+	/* Adjust as needed */
+	border-bottom: 1px solid #222020;
+	/* Adjust as needed */
+}
+
+.navbar-left {
+	display: flex;
+	align-items: center;
+}
+
+.navbar-right a {
+	margin-left: 20px;
+	text-decoration: none;
+	color: white;
+	/* Adjust as needed */
+}
+
+.logo {
+	width: 40px;
+	/* Adjust as needed */
+	height: 40px;
+	/* Adjust as needed */
+	margin-right: 10px;
+}
+
+.heading {
+	margin: 0;
+	font-size: 24px;
+	/* Adjust as needed */
+	color: white;
+	/* Adjust as needed */
+}
+
+.logout {
+	background-color: red;
+	color: white;
+	padding: 8px 16px;
+	border: none;
+	border-radius: 5px;
+	text-decoration: none;
+}
+
+.navLink {
+	position: absolute;
+	right: 0px;
+	height: 90vh;
+	top: 10vh;
+	background-color: #000;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 30%;
+	transform: translateX(100%);
+	transition: transform 0.4s ease-in;
+	opacity: 0.9;
+}
+
+.navLink li {
+	opacity: 1;
+}
+
+.lines {
+	display: block;
+}
+
+.nav-active {
+	transform: translateX(0%);
+}
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: start;
+}
+
+.containerpers {
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.cardpers {
+  background-color: #222020;
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-container {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 8px; /* Optional rounded corners */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Optional subtle shadow */
+  background-color: red; /* Optional background color */
+}
+
+.profile-picture {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%; /* Circular profile picture */
+  object-fit: cover; /* Maintain image aspect ratio within container */
+}
+
+
+#profile-picture-submit {
+  margin-left: 1rem; /* Margin after the profile picture */
+  padding: 0.5rem 1rem;
+  background-color: red;
+  color: white;
+  border: 1px solid red; /* Optional light border */
+  border-radius: 4px; /* Rounded corners for button */
+  cursor: pointer; /* Indicate hover interaction */
+}
+
+/* Optional hover styles for submit button */
+#profile-picture-submit:hover {
+  background-color: #961b1b; /* Slight background change on hover */
+}
+
+.name {
+  font-size: 24px;
+  margin: 0;
+}
+
+.username {
+  font-size: 18px;
+  color: #777;
+  margin: 10px 0;
+}
+
+.tagline,
+.description {
+  color: #555;
+  margin: 10px 0;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: red;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: rgb(216, 0, 0);
+}
+
+.delete-button {
+  border-radius: 5px;
+  background-color: red;
+  color: white;
+}
+
+/* Add these styles for the caption and upload button */
+/* Caption input styles */
+.caption-input {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  transition: border-color 0.3s;
+}
+
+.caption-input:focus {
+  border-color: #007BFF;
+}
+
+/* Upload button styles */
+.upload-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #007BFF;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.upload-button:hover {
+  background-color: #0056b3;
+}
+
+/* Style for file input */
+.file-input {
+  display: none;
+}
+
+/* Label for file input */
+.file-label {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #007BFF;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.file-label:hover {
+  background-color: #0056b3;
+}
